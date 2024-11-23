@@ -1,0 +1,116 @@
+/* Global Styles */
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #f2f1ed;
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 310px;
+}
+
+/* Countdown Container */
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.bloc-time {
+  text-align: center;
+}
+
+.count-title {
+  display: block;
+  margin-bottom: 10px;
+  font: normal 0.94em 'Lato', sans-serif;
+  color: #1a1a1a;
+  text-transform: uppercase;
+}
+
+/* Figures for Each Digit */
+.figure-container {
+  display: flex;
+  gap: 5px;
+}
+
+.figure {
+  position: relative;
+  height: 100px;
+  width: 60px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08);
+  perspective: 1000px; /* Necesario para la animación 3D */
+}
+
+.figure .top,
+.figure .bottom {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  left: 0;
+  background-color: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #de4848;
+  backface-visibility: hidden; /* Oculta la cara trasera */
+}
+
+.figure .top {
+  transform-origin: bottom;
+}
+
+.figure .bottom {
+  transform-origin: top;
+  transform: rotateX(180deg);
+}
+
+/* Back Sections for Animations */
+.figure .top-back,
+.figure .bottom-back {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  left: 0;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #de4848;
+  backface-visibility: hidden;
+}
+
+.figure .top-back {
+  transform-origin: top;
+  transform: rotateX(180deg);
+}
+
+.figure .bottom-back {
+  transform-origin: bottom;
+}
+
+/* Animation Reset */
+.figure .bottom:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.02);
+}

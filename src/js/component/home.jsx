@@ -1,59 +1,37 @@
 import React, { useEffect, useState } from "react";
+import Timer from "./Timer.jsx";
+import Countdown from "./Countdown.jsx";
 
-// included modules
-import Card from "./Card";
-
-//create your first component
 const Home = () => {
-	const [contador, setContador] = useState(0)
-	useEffect(() => {
-		const intervalo = setInterval(() => {
-			setContador((prev) => prev + 1);
-			}, 1);
-			return () => clearInterval(intervalo);
-		},[]);
-
-	const timer = (contador) => {
-		const segundos = contador % 10;
-		const segundosDecenas = Math.floor((contador / 10) % 10).toString();
-		const minutos = Math.floor((contador / 60) % 10).toString().padStart(1, 0);
-		const minutosDecenas = Math.floor((contador / 60) / 10).toString().padStart(1, 0);
-		const horas = Math.floor((contador / 3600) % 10).toString().padStart(1, 0);
-		const horasDecenas = Math.floor((contador / 3600) / 10).toString().padStart(1, 0);
-		return { segundos, segundosDecenas, minutos, minutosDecenas, horas, horasDecenas };
-	}
 
 
+  return (
+    <div className="container-fluid vh-100 p-0">
+      <div className="row h-50 border-bottom border-dark">
+        {/* Primera fila */}
+        <div className="col-12 d-flex justify-content-center align-items-center">
+          <div>
+            <div className="text-center my-3">
+              <h1 className="title-chronometer">
+                <span className="name">MauSon</span> <span className="chronometer">Chronometer</span>
+              </h1>
+            </div>
+            <Timer />
+          </div>
+        </div>
+      </div>
 
-
-	const { segundos, segundosDecenas, minutos, minutosDecenas, horas, horasDecenas } = timer(contador);
-
-	return (
-		<div className="containe-principal d-flex vh-100 p-0 m-0">
-			<div className="row mb-2 justify-content-center align-items-center">
-				<div className="col-12 col-md-6 col-lg-6 text-center">
-					<Card second={segundos} secondTens={segundosDecenas} minutes={minutos}
-						minutesTens={minutosDecenas} hours={horas} hoursTens={horasDecenas} />
-				</div>
-				<div className="col-12 col-md-6 col-lg-6 text-center">
-					<h1>Reloj 2</h1>
-				</div>
-				<div className="col-12 col-md-6 col-lg-6 text-center">
-					<h1>Reloj 3</h1>
-				</div>
-				<div className="col-12 col-md-6 col-lg-6 text-center">
-					<h1>Reloj 4</h1>
-				</div>
-
-			</div>
-		</div>
-
-	);
+      <div className="row h-50">
+        {/* Segunda fila */}
+        <div className="col-12 d-flex justify-content-center align-items-center">
+          <div>
+            <h1>Reloj 2</h1>
+            <Countdown targetDate="2024-12-31T23:59:59" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Home;
-
-
-
-
-
