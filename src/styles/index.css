@@ -1,38 +1,51 @@
 .title-chronometer {
-  font-size: 3.5rem; /* Tamaño del título */
+  font-size: 3.5rem;
+  /* Tamaño del título */
   font-weight: bold;
   text-align: center;
 }
 
 .title-chronometer .name {
-  color: black; 
+  color: black;
 }
 
-.title-chronometer .chronometer {
-  color: #32CD32; 
+.title-chronometer .project-chronometer {
+  color: #32CD32;
 }
 
+.title-chronometer .project-countdown {
+  color: #32CD32;
+}
 
 .digital-timer {
   display: flex;
-  align-items: center; /* Centra verticalmente los elementos */
-  justify-content: center; /* Centra horizontalmente */
-  gap: 5px; /* Espaciado entre los elementos */
-  font-size: 2rem; /* Tamaño general */
+  align-items: center;
+  /* Centra verticalmente todo (dígitos y semicolon) */
+  justify-content: center;
+  /* Centra horizontalmente */
+  gap: 5px;
+  /* Espacio entre componentes */
 }
 
-.timer-digit-box {
+.timer-block {
   display: flex;
-  align-items: center; /* Centra verticalmente el contenido */
-  justify-content: center; /* Centra horizontalmente el contenido */
-  width: 60px;
-  height: 80px;
-  font-family: "Digital", monospace;;
-  background-color: #575151;
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Sombra */
-  font-size: 3rem; /* Tamaño del dígito */
-  color: #32CD32; /* Color de los dígitos */
+  flex-direction: column; /* Apila el título encima de los dígitos */
+  align-items: center; /* Centra horizontalmente el contenido */
+  text-align: center; /* Centra el texto del título */
+  margin: 0 5px; /* Espaciado horizontal entre bloques */
+}
+
+.timer-title {
+  font-size: 1rem; /* Tamaño del título */
+  font-weight: bold; /* Resalta el título */
+  margin-bottom: 5px; /* Espaciado entre el título y los dígitos */
+  color: #333; /* Color del texto del título */
+}
+
+.timer-digits {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .timer-colon {
@@ -42,39 +55,94 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0px 5px;
+  /* Espaciado horizontal */
 }
 
-  .card-footer {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    gap: 3px; /* Espacio entre los botones */
-  }
+.timer-digit-box {
+  display: flex;
+  align-items: center;
+  /* Centra verticalmente el contenido */
+  justify-content: center;
+  /* Centra horizontalmente el contenido */
+  width: 60px;
+  height: 80px;
+  font-family: "Digital", monospace;
+  ;
+  background-color: #575151;
+  border-radius: 10px;
+  /* Bordes redondeados */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  /* Sombra */
+  font-size: 3rem;
+  /* Tamaño del dígito */
+  color: #32CD32;
+  /* Color de los dígitos */
+}
 
-    .btn-start-stop {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%; /* Hace el botón redondo */
-      font-size: 16px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: none;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease; /* Suaviza los cambios de color y efecto */
-    }
-    
-    .btn-start-stop.start {
-      background-color: green;
-    }
-    
-    .btn-start-stop.stop {
-      background-color: red;
-    }
-    
-    .btn-start-stop:active {
-      transform: scale(0.95);
-    }
+.countdown-colon {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  margin: 0px 5px;
+  /* Espaciado horizontal */
+}
 
+.card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  /* Espacio entre los botones */
+}
+
+.btn-start-stop {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  /* Hace el botón redondo */
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Suaviza los cambios de color y efecto */
+}
+
+.btn-start-stop.start {
+  background-color: green;
+}
+
+.btn-start-stop.stop {
+  background-color: red;
+}
+
+.btn-start-stop:active {
+  transform: scale(0.95);
+}
+
+/* Fondo para la sección del cronómetro */
+.chronometer-section {
+  background-image: url('../img/CronoFondo.png');
+  background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  padding: 20px; /* Opcional: Espaciado interno */
+}
+
+/* Fondo para la sección del countdown */
+.countdown-section {
+  background-image: url('../img/CountDownOfertas.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+}

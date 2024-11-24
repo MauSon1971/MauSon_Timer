@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import "../../styles/countdown.css";
 
-const Countdown = ({ targetDate }) => {
+const CountdownOLD = ({ targetDate }) => {
   // Referencias para cada dígito
   const refs = useRef({
     days: [useRef(null), useRef(null)],
@@ -106,4 +106,4 @@ const Countdown = ({ targetDate }) => {
   );
 };
 
-export default Countdown;
+export default CountdownOLD;
